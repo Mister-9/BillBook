@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.mr9.billgenerator.NewItemsActivity">
+
+    <TextView
+        android:id="@+id/text_billNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/billNo"
+        android:textAlignment="center"
+        android:textColor="@color/theme_button_color"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_billNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/billNo"
+        android:text="@string/billNo"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edit_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/b_quantity"
+            android:inputType="number"
+            android:textAlignment="center" />
+
+        <EditText
+                android:id="@+id/edit_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/q_rate"
+                android:inputType="number|numberDecimal"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+    <Button
+        android:id="@+id/button_addItem"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_item"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/text_billItems"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/billItems"
+        android:textAlignment="center"
+        android:textColor="@color/theme_button_color"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_quntity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/b_quantity"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/q_rate"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollItemList"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:elevation="@dimen/cardview_default_elevation"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/Linear_RowList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/linear_quantity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center">
+
+                <TableLayout
+                    android:id="@+id/item_quntity_column"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/divider_table"
+                    android:gravity="center"
+                    android:showDividers="middle">
+                </TableLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Linear_rate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center">
+
+                <TableLayout
+                    android:id="@+id/item_rate_column"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                </TableLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button_listSubmit"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submit_bill"
+        android:textSize="20sp" />
+
+</LinearLayout>

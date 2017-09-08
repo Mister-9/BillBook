@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">બિલ બૂક</string>
+    <string name="title_home">મુખ્ય પેજ</string>
+    <string name="title_dashboard">પાટીયું</string>
+    <string name="title_notifications">સૂચનાઓ</string>
+    <string name="billNo">બિલ નંબર</string>
+    <string name="billItems">બિલ વિગત</string>
+    <string name="b_quantity">નંગ</string>
+    <string name="q_rate">ભાવ</string>
+    <string name="add_item">વિગત ઉમેરો</string>
+    <string name="submit_bill">બિલ ઉમેરો</string>
+    <string name="rough_bill">રફ બિલ</string>
+    <string name="total">ટોટલ</string>
+</resources>
