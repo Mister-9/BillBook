@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -100,7 +99,8 @@
             android:id="@+id/rLinear_List"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:baselineAligned="false">
 
             <LinearLayout
                 android:id="@+id/linear_rQuantity"
@@ -108,13 +108,13 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
-                android:gravity="center">
+                android:gravity="end|center">
 
                 <TableLayout
                     android:id="@+id/item_rQuntity_column"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal">
+                    android:gravity="end|center">
                 </TableLayout>
             </LinearLayout>
 
@@ -124,13 +124,13 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
-                android:gravity="center">
+                android:gravity="end|center">
 
                 <TableLayout
                     android:id="@+id/item_rRate_column"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal">
+                    android:gravity="end|center">
                 </TableLayout>
             </LinearLayout>
 
@@ -140,13 +140,13 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
-                android:gravity="center">
+                android:gravity="end|center">
 
                 <TableLayout
                     android:id="@+id/item_rTotal_column"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal">
+                    android:gravity="end|center">
                 </TableLayout>
             </LinearLayout>
 

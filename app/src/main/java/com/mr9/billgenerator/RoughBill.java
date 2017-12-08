@@ -40,6 +40,8 @@ public class RoughBill extends AppCompatActivity {
     protected float total=0;
     protected MainActivity.BillGenDbHelper billGenDbHelper;
     protected SQLiteDatabase db;
+    protected String rate_array[];
+    protected String quat_array[];
     //endregion
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +73,7 @@ public class RoughBill extends AppCompatActivity {
         String selection = DatabaseContract.InitialBillTable.COLUMN_NAME_billNo + " = ?";
         String[] selectionArgs = {String.valueOf(rb_bill_numb)};
         String sortOrder =
-                DatabaseContract.InitialBillTable.COLUMN_NAME_billNo + " ASC";
+                DatabaseContract.InitialBillTable.COLUMN_NAME_billRate + " ASC";
         Cursor cursor = db.query(
                 DatabaseContract.InitialBillTable.TABLE_NAME,// The table to query
                 bill_projection,                               // The columns to return
@@ -84,8 +86,8 @@ public class RoughBill extends AppCompatActivity {
         //endregion
 
         //region getListToArray
-        List<String> b_quantity = new ArrayList<String>();
-        List<String> b_rate = new ArrayList<String>();
+        List<String> b_quantity = new ArrayList<>();
+        List<String> b_rate = new ArrayList<>();
         while (cursor.moveToNext()) {
             rb_bill_noCount++;
             rb_i_quant = cursor.getString(
@@ -98,25 +100,28 @@ public class RoughBill extends AppCompatActivity {
         cursor.close();
         rbl_quantity = b_quantity.toArray(new String[0]);
         rbl_rate = b_rate.toArray(new String[0]);
-        //Toast.makeText(RoughBill.this,String.valueOf(rb_bill_noCount),Toast.LENGTH_SHORT).show();
-        for(j=0;j<=rb_bill_noCount;j++)
+        Toast.makeText(RoughBill.this,String.valueOf(rb_bill_noCount),Toast.LENGTH_SHORT).show();
+        int temp=rb_bill_noCount;
+        rate_array=new String[rbl_rate.length];
+        quat_array=new String[rbl_quantity.length];
+        int j=0;
+        for(i=0;i<rb_bill_noCount;)
         {
-         for(i=j+1;i<=rb_bill_noCount;i++)
-         {
-            // Toast.makeText(RoughBill.this,String.valueOf(rbl_rate[i])+String.valueOf(rbl_rate[j]),Toast.LENGTH_SHORT).show();
-          if(Float.valueOf(rbl_rate[i])==Float.valueOf(rbl_rate[j]))
-          {
-              rbl_quantity[j]=String.valueOf(Integer.valueOf(rbl_quantity[j])+Integer.valueOf(rbl_quantity[i]));
-              rb_bill_noCount--;
-              Toast.makeText(RoughBill.this,String.valueOf(rb_bill_noCount),Toast.LENGTH_SHORT).show();
+            quat_array[j] = String.valueOf(Integer.valueOf(rbl_quantity[i]));
+            rate_array[j] = String.valueOf(Integer.valueOf(rbl_rate[i]));
+            i++;
+          //Toast.makeText(RoughBill.this,String.valueOf(rbl_rate[i])+String.valueOf(rbl_rate[j]),Toast.LENGTH_SHORT).show();
+          while(i<rb_bill_noCount && (rate_array[j]).equals(rbl_rate[i])) {
+              quat_array[j] = String.valueOf(Integer.valueOf(quat_array[j]) + Integer.valueOf(rbl_quantity[i++]));
+              //Toast.makeText(RoughBill.this, String.valueOf("here we go"), Toast.LENGTH_SHORT).show();
           }
-         }
+          j++;
         }
-        //Toast.makeText(RoughBill.this,String.valueOf(rb_bill_noCount),Toast.LENGTH_SHORT).show();
+        Toast.makeText(RoughBill.this,String.valueOf(j),Toast.LENGTH_SHORT).show();
         //endregion
-        for(i=0;i<rb_bill_noCount;i++) {//show inserted row
-            total=total+(Integer.valueOf(rbl_quantity[i])*Float.valueOf(rbl_rate[i]));
-            rbl_total[i]=String.valueOf(Integer.valueOf(rbl_quantity[i])*Float.valueOf(rbl_rate[i]));
+        for(i=0;i<j;i++) {//show inserted row
+            total=total+(Integer.valueOf(quat_array[i])*Float.valueOf(rate_array[i]));
+            rbl_total[i]=String.valueOf(Integer.valueOf(quat_array[i])*Float.valueOf(rate_array[i]));
             show_bill_item();
         }
         rb_bill_total.setBackgroundResource(R.drawable.divider_table);
@@ -141,7 +146,7 @@ public class RoughBill extends AppCompatActivity {
         rb_t_tbrow.setBackgroundResource(R.drawable.divider_table);
         rb_q_col.setGravity(Gravity.CENTER);
         rb_q_tbrow.setGravity(Gravity.CENTER);
-        rb_quantity.setText(rbl_quantity[i]);
+        rb_quantity.setText(quat_array[i]);
         //quantity.setTextColor(Color.BLACK);
         rb_quantity.setTextSize(25);
         rb_q_tbrow.addView(rb_quantity);
@@ -151,7 +156,7 @@ public class RoughBill extends AppCompatActivity {
         //region rate_tableInsertion
         rb_r_col.setGravity(Gravity.CENTER);
         rb_r_tbrow.setGravity(Gravity.CENTER);
-        rb_rate.setText(rbl_rate[i]);
+        rb_rate.setText(rate_array[i]);
         //rate.setTextColor(Color.BLACK);
         rb_rate.setTextSize(25);
         rb_r_tbrow.addView(rb_rate);
