@@ -6,7 +6,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context="com.mr9.billgenerator.MainActivity">
 
 
+    <Button
+        android:id="@+id/button_addBill"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_bill" />
+
+    <Button
+        android:id="@+id/button_showRoughBill"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/show_rough_bill" />
+
+    <Button
+        android:id="@+id/button_createBill"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/create_final_bill" />
 </LinearLayout>

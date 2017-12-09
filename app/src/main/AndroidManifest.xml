@@ -18,9 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".FinalBill"/>
         <activity android:name=".NewBillActivity" />
         <activity android:name=".NewItemsActivity" />
-        <activity android:name=".RoughBill"></activity>
+        <activity android:name=".ShowBillActivity"/>
+        <activity android:name=".CreateBillActivity"/>
+        <activity android:name=".RoughBill"/>
     </application>
 
 </manifest>

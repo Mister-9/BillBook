@@ -6,8 +6,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+
 
 public class MainActivity extends AppCompatActivity {
+
     static String SQL_CREATE_ENTRIES = "CREATE TABLE " +
             DatabaseContract.InitialBillTable.TABLE_NAME + " (" +
             DatabaseContract.InitialBillTable._ID + " INTEGER PRIMARY KEY," +
@@ -40,16 +44,42 @@ public class MainActivity extends AppCompatActivity {
             onUpgrade(db, oldVersion, newVersion);
         }
     }
+    protected Button add_bill,show_rough_bill,crate_final_bill;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
-        Intent intent=new Intent(MainActivity.this,NewBillActivity.class);
-
-        startActivity(intent);
-
+        add_bill=(Button)findViewById(R.id.button_addBill);
+        show_rough_bill=(Button)findViewById(R.id.button_showRoughBill);
+        crate_final_bill=(Button)findViewById(R.id.button_createBill);
+        add_bill.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(MainActivity.this,NewBillActivity.class);
+                        startActivity(intent);
+                    }
+                }
+        );
+        show_rough_bill.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(MainActivity.this,ShowBillActivity.class);
+                        startActivity(intent);
+                    }
+                }
+        );
+        crate_final_bill.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(MainActivity.this,CreateBillActivity.class);
+                        startActivity(intent);
+                    }
+                }
+        );
     }
-
 }

@@ -99,8 +99,8 @@
             android:id="@+id/rLinear_List"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:baselineAligned="false">
+            android:baselineAligned="false"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:id="@+id/linear_rQuantity"
@@ -114,8 +114,7 @@
                     android:id="@+id/item_rQuntity_column"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="end|center">
-                </TableLayout>
+                    android:gravity="end|center"></TableLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -130,8 +129,7 @@
                     android:id="@+id/item_rRate_column"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="end|center">
-                </TableLayout>
+                    android:gravity="end|center"></TableLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -146,8 +144,7 @@
                     android:id="@+id/item_rTotal_column"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="end|center">
-                </TableLayout>
+                    android:gravity="end|center"></TableLayout>
             </LinearLayout>
 
         </LinearLayout>

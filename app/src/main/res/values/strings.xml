@@ -11,4 +11,18 @@
     <string name="submit_bill">બિલ ઉમેરો</string>
     <string name="rough_bill">રફ બિલ</string>
     <string name="total">ટોટલ</string>
+    <string name="add_bill">નવુ બિલ</string>
+    <string name="show_rough_bill">રફ બિલ બતાવો</string>
+    <string name="create_final_bill">ટેક્સ બિલ બનાવો</string>
+    <string name="button_show_bill">બિલ બતાવો</string>
+    <string name="final_bill">ટેક્સ બિલ</string>
+    <string name="srNum">ન.</string>
+    <string name="discount">ડિસ્કાઉન્ટ (-3%)</string>
+    <string name="equal">  =</string>
+    <string name="SGST">SGST(+2.5%)</string>
+    <string name="CGST">CGST(+2.5%)</string>
+    <string name="enterBillNo">બિલ નંબર દાખલ કરો</string>
+    <string name="starting_bill">શરૂઆતી બિલ નંબર</string>
+    <string name="last_bill">અંતીમ બિલ નંબર</string>
+    <string name="button_create_bill">બિલ બનાવો</string>
 </resources>

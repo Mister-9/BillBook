@@ -1,12 +1,10 @@
 package com.mr9.billgenerator;
 
 import android.content.ContentValues;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
@@ -86,31 +84,6 @@ public class NewItemsActivity extends AppCompatActivity {
             bill_noCount++;
         }
         cursor.close();
-        //endregion
-
-        //region bill_noAlert
-        if(bill_noCount>0)
-        {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("The bill number already exist\n Do you want to overwrite bill?")
-                    .setCancelable(false)
-                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            String selection = DatabaseContract.InitialBillTable.COLUMN_NAME_billNo + " LIKE ?";
-                            String[] selectionArgs = {bill_no.getText().toString()};
-                            db.delete(DatabaseContract.InitialBillTable.TABLE_NAME, selection, selectionArgs);
-                        }
-                    })
-                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            Intent intent1=new Intent(NewItemsActivity.this,NewBillActivity.class);
-                            startActivity(intent1);
-                            dialog.cancel();
-                        }
-                    });
-            AlertDialog alert = builder.create();
-            alert.show();
-        }
         //endregion
 
         //region add_itemListner
@@ -247,7 +220,7 @@ public class NewItemsActivity extends AppCompatActivity {
         q_col.setGravity(Gravity.CENTER);
             q_tbrow.setGravity(Gravity.CENTER);
             quantity.setText(l_quantity[0]);
-            //quantity.setTextColor(Color.BLACK);
+        //quantity.setTextColor(Color.BLACK);
             quantity.setTextSize(25);
             q_tbrow.addView(quantity);
             q_col.addView(q_tbrow);

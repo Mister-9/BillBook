@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.mr9.billgenerator.RoughBill"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_finalBill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/final_bill"
+        android:textAlignment="center"
+        android:textColor="@color/theme_button_color"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:paddingTop="10sp">
+
+        <TextView
+            android:id="@+id/text_srNum"
+            android:layout_width="38dp"
+            android:layout_height="wrap_content"
+            android:text="@string/srNum"
+            android:textAlignment="center"
+            android:textColor="@color/theme_button_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_billnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/billNo"
+            android:textAlignment="center"
+            android:textColor="@color/theme_button_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_quantity"
+            android:layout_width="82dp"
+            android:layout_height="wrap_content"
+            android:text="@string/b_quantity"
+            android:textAlignment="center"
+            android:textColor="@color/theme_button_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_rate"
+            android:layout_width="69dp"
+            android:layout_height="wrap_content"
+            android:text="@string/q_rate"
+            android:textAlignment="center"
+            android:textColor="@color/theme_button_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_rTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/total"
+            android:textAlignment="center"
+            android:textColor="@color/theme_button_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/fScrollItemList"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/fLinear_List"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/linear_fSrNum"
+                android:layout_width="38dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="end|center">
+
+                <TableLayout
+                    android:id="@+id/bill_fSrNum_col"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end|center"> </TableLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_fBillNum"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="end|center">
+
+                <TableLayout
+                    android:id="@+id/bill_fBillNum_col"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end|center"> </TableLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_fQuantity"
+                android:layout_width="82dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="end|center">
+
+                <TableLayout
+                    android:id="@+id/bill_fQuntity_col"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end|center"></TableLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_fRate"
+                android:layout_width="68dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="end|center">
+
+                <TableLayout
+                    android:id="@+id/bill_fRate_col"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end|center"></TableLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_fTotal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:gravity="end|center">
+
+                <TableLayout
+                    android:id="@+id/bill_fTotal_col"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end|center"></TableLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginEnd="0sp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingTop="2sp">
+
+            <TextView
+                android:id="@+id/text_iTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/total"
+                android:textAlignment="center"
+                android:textColor="@color/theme_button_color"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/iTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/total"
+                android:textAlignment="center"
+                android:textColor="@color/theme_button_color"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingTop="2sp">
+
+            <TextView
+                android:id="@+id/text_discount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/discount"
+                android:textAlignment="center"
+                android:textColor="@color/theme_button_color"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/discount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/discount"
+                android:textAlignment="center"
+                android:textColor="@color/theme_button_color"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingTop="2sp">
+
+            <TextView
+                android:id="@+id/text_disTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/equal"
+                android:textAlignment="center"
+                android:textColor="@color/theme_button_color"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/disTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/equal"
+                android:textAlignment="center"
+                android:textColor="@color/theme_button_color"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingTop="2sp">
+
+            <TextView
+                android:id="@+id/text_SGST"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/SGST"
+                android:textAlignment="center"
+                android:textColor="@color/theme_button_color"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/SGST"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/SGST"
+                android:textAlignment="center"
+                android:textColor="@color/theme_button_color"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingTop="2sp">
+
+            <TextView
+                android:id="@+id/text_CGST"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/CGST"
+                android:textAlignment="center"
+                android:textColor="@color/theme_button_color"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/CGST"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/CGST"
+                android:textAlignment="center"
+                android:textColor="@color/theme_button_color"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingTop="5sp">
+
+            <TextView
+                android:id="@+id/text_finalTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/total"
+                android:textAlignment="center"
+                android:textColor="@color/theme_button_color"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/finalTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/total"
+                android:textAlignment="center"
+                android:textColor="@color/theme_button_color"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

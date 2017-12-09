@@ -9,7 +9,6 @@ import android.view.Gravity;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -100,7 +99,7 @@ public class RoughBill extends AppCompatActivity {
         cursor.close();
         rbl_quantity = b_quantity.toArray(new String[0]);
         rbl_rate = b_rate.toArray(new String[0]);
-        Toast.makeText(RoughBill.this,String.valueOf(rb_bill_noCount),Toast.LENGTH_SHORT).show();
+        //Toast.makeText(RoughBill.this,String.valueOf(rb_bill_noCount),Toast.LENGTH_SHORT).show();
         int temp=rb_bill_noCount;
         rate_array=new String[rbl_rate.length];
         quat_array=new String[rbl_quantity.length];
@@ -108,7 +107,7 @@ public class RoughBill extends AppCompatActivity {
         for(i=0;i<rb_bill_noCount;)
         {
             quat_array[j] = String.valueOf(Integer.valueOf(rbl_quantity[i]));
-            rate_array[j] = String.valueOf(Integer.valueOf(rbl_rate[i]));
+            rate_array[j] = String.valueOf(Float.valueOf(rbl_rate[i]));
             i++;
           //Toast.makeText(RoughBill.this,String.valueOf(rbl_rate[i])+String.valueOf(rbl_rate[j]),Toast.LENGTH_SHORT).show();
           while(i<rb_bill_noCount && (rate_array[j]).equals(rbl_rate[i])) {
@@ -117,7 +116,7 @@ public class RoughBill extends AppCompatActivity {
           }
           j++;
         }
-        Toast.makeText(RoughBill.this,String.valueOf(j),Toast.LENGTH_SHORT).show();
+        //Toast.makeText(RoughBill.this,String.valueOf(j),Toast.LENGTH_SHORT).show();
         //endregion
         for(i=0;i<j;i++) {//show inserted row
             total=total+(Integer.valueOf(quat_array[i])*Float.valueOf(rate_array[i]));
